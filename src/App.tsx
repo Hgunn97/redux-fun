@@ -1,21 +1,13 @@
-import { ReactElement, useEffect, useState } from 'react';
-import { loginUrl, validateLogin } from '../Server/Auth';
+import { ReactElement } from 'react';
+import Task from "./Components/Task";
+import {TaskList} from "./Components/TaskList";
 
-function App(): ReactElement {
-  const { token } = validateLogin();
-
-  useEffect(() => {
-    if (!token) return;
-  }, [token]);
-
-  if (!token) {
-    window.location.href = loginUrl;
-  }
-
+const App = (): ReactElement => {
   return (
     <>
-      <h1>Top Spotify App</h1>
-      <p>{token ? 'Token saved' : 'No token found'}</p>
+      <h1>Todo App</h1>
+        <Task />
+        <TaskList />
     </>
   );
 }

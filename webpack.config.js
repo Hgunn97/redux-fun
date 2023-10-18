@@ -4,6 +4,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index',
+  devtool: 'inline-source-map',
   devServer: {
     compress: true,
     static: {
@@ -56,7 +57,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/spotify-icon.png'
+      favicon: './public/favicon.ico'
     }),
     new CleanWebpackPlugin()
   ]
